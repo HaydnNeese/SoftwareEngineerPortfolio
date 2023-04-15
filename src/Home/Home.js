@@ -2,6 +2,8 @@ import './Home.css';
 
 const Home = () => {
     return (
+        // TODO body probably needs to be its own component,
+        // TODO put image to right later
         <div className='home-body'>
             {/* TODO return to wordsmith this */}
             {/* TODO needs more styling */}
