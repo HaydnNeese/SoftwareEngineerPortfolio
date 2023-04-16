@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import './Home.css';
 
 const Home = () => {
