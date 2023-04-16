@@ -12,11 +12,12 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import PersonIcon from "@mui/icons-material/Person";
 import myAvatar from "../assets/IMG_8369.jpg";
+import { Link } from "@mui/material";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["About Me", "Skills", "Applications"];
+const settings = ["Resume"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,11 +39,13 @@ const Header = () => {
   };
 
   return (
+    // TODO want the color of the AppBar to be black
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-            {/* TODO lets make this icon a React icon or an icon for a person */}
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* TODO lets make this icon a React icon or an icon for a person */}
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <PersonIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -97,7 +100,9 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* TODO lets make this icon a React icon or an icon for a person */}
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+          <PersonIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -131,7 +136,7 @@ const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Haydn Avatar" src={myAvatar}/>
+                <Avatar alt="Haydn Avatar" src={myAvatar} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -151,8 +156,19 @@ const Header = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting} onClick={handleCloseUserMenu}
+                    component={Link}
+                    href="../assets/haydn-resume.pdf"
+                    download="../assets/haydn-resume.pdf">
+                        {/* TODO get this button to work */}
+                    {/* <Button
+                        variant="contained"
+                        component={Link}
+                        href="../assets/haydn_neese_resume.docx"
+                        download="haydn_neese_resume.docx"
+                    > */}
+                        {setting}
+                    {/* </Button> */}
                 </MenuItem>
               ))}
             </Menu>
