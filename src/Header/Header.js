@@ -12,7 +12,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import PersonIcon from "@mui/icons-material/Person";
+import CodeIcon from "@mui/icons-material/Code";
 import myAvatar from "../assets/IMG_8369.jpg";
 import { Link } from "@mui/material";
 
@@ -45,7 +45,7 @@ const Header = () => {
         <Toolbar disableGutters>
           {/* TODO lets make this icon a React icon or an icon for a person */}
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <PersonIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -102,7 +102,7 @@ const Header = () => {
           </Box>
           {/* TODO lets make this icon a React icon or an icon for a person */}
           {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-          <PersonIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <CodeIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
