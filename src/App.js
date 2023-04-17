@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Header/Header';
-import Home from './Home/Home';
 import { createTheme, colors, ThemeProvider } from '@mui/material';
+import WelcomeBody from './WelcomeBody/WelcomeBody';
 
 function App() {
   const theme = createTheme({
@@ -13,10 +13,10 @@ function App() {
         contrastText: colors.grey[50]
       },
       secondary: {
-        main: colors.grey[200],
-        light: colors.grey[50],
-        dark: colors.grey[600],
-        contrastText: colors.blueGrey[800]
+        main: colors.green[600],
+        light: colors.green[200],
+        dark: colors.green[900],
+        contrastText: colors.grey[50]
       }
     }
   });
@@ -25,7 +25,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header/>
 
-      <Home/>
+      <WelcomeBody/>
     </ThemeProvider>
   );
 }
