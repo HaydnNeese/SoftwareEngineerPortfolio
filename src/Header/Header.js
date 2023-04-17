@@ -39,7 +39,6 @@ const Header = () => {
   };
 
   return (
-    // TODO want the color of the AppBar to be black
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -100,8 +99,6 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          {/* TODO lets make this icon a React icon or an icon for a person */}
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <CodeIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -159,14 +156,9 @@ const Header = () => {
                 <MenuItem key={setting} onClick={handleCloseUserMenu}
                     component={Link}
                     href="../assets/haydn-resume.pdf"
-                    download="../assets/haydn-resume.pdf">
-                        {/* TODO get this button to work */}
-                    {/* <Button
-                        variant="contained"
-                        component={Link}
-                        href="../assets/haydn_neese_resume.docx"
-                        download="haydn_neese_resume.docx"
-                    > */}
+                    download="haydn-resume.pdf">
+                        {/* TODO get this link to work */}
+                        {/* ! currently does not download the file, but it initiates a download click */}
                         {setting}
                     {/* </Button> */}
                 </MenuItem>
