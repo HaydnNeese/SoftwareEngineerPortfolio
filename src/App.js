@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Header/Header';
 import { createTheme, colors, ThemeProvider } from '@mui/material';
-import WelcomeBody from './WelcomeBody/WelcomeBody';
+import LandingPage from './LandingPage/LandingPage';
 
 function App() {
   const theme = createTheme({
@@ -25,7 +25,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header/>
 
-      <WelcomeBody/>
+      <LandingPage/>
     </ThemeProvider>
   );
 }

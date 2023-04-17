@@ -1,7 +1,7 @@
 import { Box, Button, Container } from '@mui/material';
-import './WelcomeBody.css';
+import './LandingPage.css';
 
-const WelcomeBody = () => {
+const LandingPage = () => {
     return (
         <Container maxWidth="md" sx={{flexGrow: 1}}>
             <Box
@@ -28,4 +28,4 @@ const WelcomeBody = () => {
     );
 };
 
-export default WelcomeBody;
+export default LandingPage;
