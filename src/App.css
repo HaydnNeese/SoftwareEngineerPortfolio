@@ -10,6 +10,12 @@ body {
   flex-direction: column;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 body > * {
   flex-shrink: 0;
 }

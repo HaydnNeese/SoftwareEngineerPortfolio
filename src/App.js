@@ -1,31 +1,31 @@
-import './App.css';
-import Header from './Header/Header';
-import { createTheme, colors, ThemeProvider } from '@mui/material';
-import LandingPage from './LandingPage/LandingPage';
+import "./App.css";
+import Header from "./Header/Header";
+import { createTheme, colors, ThemeProvider } from "@mui/material";
+import LandingPage from "./LandingPage/LandingPage";
 
 function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main:  colors.grey[900],
+        main: colors.grey[900],
         light: colors.blueGrey[400],
         dark: colors.blueGrey[200],
-        contrastText: colors.grey[50]
+        contrastText: colors.grey[50],
       },
       secondary: {
         main: colors.green[600],
         light: colors.green[200],
         dark: colors.green[900],
-        contrastText: colors.grey[50]
-      }
-    }
+        contrastText: colors.grey[50],
+      },
+    },
   });
 
   return (
     <ThemeProvider theme={theme}>
-      <Header/>
+      <Header />
 
-      <LandingPage/>
+      <LandingPage />
     </ThemeProvider>
   );
 }

@@ -16,7 +16,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import myAvatar from "../assets/IMG_8369.jpg";
 import { Link } from "@mui/material";
 
-const pages = ["About Me", "Skills", "Applications"];
+const pages = ["About Me", "Skills", "Projects"];
 const settings = ["Resume"];
 
 const Header = () => {
@@ -153,14 +153,17 @@ const Header = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}
-                    component={Link}
-                    href="../assets/haydn-resume.pdf"
-                    download="haydn-resume.pdf">
-                        {/* TODO get this link to work */}
-                        {/* ! currently does not download the file, but it initiates a download click */}
-                        {setting}
-                    {/* </Button> */}
+                <MenuItem
+                  key={setting}
+                  onClick={handleCloseUserMenu}
+                  component={Link}
+                  href="../assets/haydn-resume.pdf"
+                  download="haydn-resume.pdf"
+                >
+                  {/* TODO get this link to work */}
+                  {/* ! currently does not download the file, but it initiates a download click */}
+                  {setting}
+                  {/* </Button> */}
                 </MenuItem>
               ))}
             </Menu>
