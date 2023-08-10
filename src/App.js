@@ -1,7 +1,11 @@
 import "./App.css";
-import Header from "./Header/Header";
 import { createTheme, colors, ThemeProvider } from "@mui/material";
-import LandingPage from "./LandingPage/LandingPage";
+import { Routes, Route } from 'react-router-dom';
+import Header from "./Header/Header";
+import LandingPage from "./Pages/LandingPage/LandingPage";
+import AboutMe from './Pages/AboutMe/AboutMe';
+import LinkSpeedDial from "./LinkSpeedDial/LinkSpeedDial";
+import Experience from "./Pages/Experience/Experience";
 
 function App() {
   const theme = createTheme({
@@ -22,11 +26,17 @@ function App() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
+      <ThemeProvider theme={theme}>
+        <Header />
 
-      <LandingPage />
-    </ThemeProvider>
+        <Routes>
+          <Route path="/" element={<LandingPage/>}></Route>
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/experience" element={<Experience/>}></Route>
+        </Routes>
+
+        <LinkSpeedDial />
+      </ThemeProvider>
   );
 }
 

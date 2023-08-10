@@ -1,22 +1,29 @@
 import React from "react";
-import "./Header.css";
 import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import CodeIcon from "@mui/icons-material/Code";
+import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import CodeIcon from "@mui/icons-material/Code";
-import myAvatar from "../assets/IMG_8369.jpg";
-import { Link } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 
-const pages = ["About Me", "Skills", "Projects"];
+import "./Header.css";
+import myAvatar from "../Assets/IMG_8369.jpg";
+
+const pages = [
+  { title: "About Me", link: "/about" },
+  { title: "Experience", link: "/experience" },
+  { title: "Education", link: "/education" },
+  { title: "Skills", link: "/skills" },
+  { title: "Projects", link: "/projects" },
+];
 const settings = ["Resume"];
 
 const Header = () => {
@@ -24,8 +31,10 @@ const Header = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+    console.log(event.currentTarget);
+    setAnchorElNav(event);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -93,8 +102,8 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu} href={page.link}>
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -121,11 +130,12 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
+                href={page.link}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
@@ -163,7 +173,6 @@ const Header = () => {
                   {/* TODO get this link to work */}
                   {/* ! currently does not download the file, but it initiates a download click */}
                   {setting}
-                  {/* </Button> */}
                 </MenuItem>
               ))}
             </Menu>
