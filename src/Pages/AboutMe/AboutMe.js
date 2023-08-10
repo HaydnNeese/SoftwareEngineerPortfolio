@@ -5,8 +5,8 @@ const AboutMe = () => {
     return (
         // TODO Needs to have a headshot picture to the left and then a brief story on who I am and what I do
         <Container maxWidth="md" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
-            <div className="paragraph-container">
-                <h1>About Me</h1>
+            <div className="flex flex-col gap-4 text-center">
+                <h1 className="text-5xl font-extrabold">About Me</h1>
                 <p>
                     I'm Haydn, a software engineer with a specialization in Angular 15+ development and a focus on intuitive user experience.
                     I have spent the last 4 years playing a key role in assisting our Lead UI Engineer to build a Cloud Portal UI that takes very complicated concepts and
